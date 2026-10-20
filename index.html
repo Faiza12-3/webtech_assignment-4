@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <title>Markdown Slides</title>
+
+  <link rel="stylesheet" href="style.css">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="topbar">  <h1>Markdown Slides</h1>
+    <input id="titleInput" type="text"
+
+  placeholder="Presentation title">
+
+    <button id="newBtn">New</button>
+    <button id="saveBtn">Save (Ctrl+S)</button>
+
+    <button id="presentBtn">Present</button>
+  </header>
+
+  <main id="editorLayout">
+
+    <section class="editor-panel">
+
+      <h2>Markdown Editor</h2>
+
+     <p>Separate slides with three hyphens: ---</p>
+
+      <textarea id="markdownInput" spellcheck="false"
+
+        placeholder="# My first slide
+
+Write your content here.
+
+---
+
+# My second slide
+
+More content here."></textarea>
+    </section>
+
+    <section class="viewer-panel">
+      <h2>Live Slide Viewer</h2>
+
+      <div id="slide" class="slide"></div>
+
+      <div class="controls">
+
+        <button id="prevBtn">← Previous</button>
+
+        <span id="counter">Slide 1 / 1</span>
+        <button id="nextBtn">Next →</button>
+
+        <button id="fullscreenBtn">Fullscreen</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="presentation" class="presentation hidden">
+    <div id="presentationSlide" class="slide"></div>
+
+    <div class="controls">
+      <button id="presentationPrev">← Previous</button>
+
+      <span id="presentationCounter">Slide 1 / 1</span>
+
+      <button id="presentationNext">Next →</button>
+
+      <button id="exitBtn">Exit Presentation</button>
+    </div>
+  </section>
+
+  <p id="status" role="status"></p>
+</body>
+</html>

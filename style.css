@@ -1,0 +1,155 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 16px 24px;
+  background: #172033;
+  color: white;
+}
+
+.topbar h1 {
+  font-size: 22px;
+  margin-right: auto;
+}
+
+input, textarea, button {
+  font: inherit;
+}
+
+input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #cbd5e1;
+}
+
+button {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+.editor-panel, .viewer-panel {
+  min-width: 0;
+  padding: 18px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px #0000000d;
+}
+
+textarea {
+  width: 100%;
+  min-height: 420px;
+  resize: vertical;
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.slide {
+  min-height: 420px;
+  padding: 35px;
+  background: white;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow-wrap: anywhere;
+}
+
+.slide h1 {
+  color: #1d4ed8;
+}
+
+.slide img {
+  max-width: 100%;
+}
+
+.slide pre {
+  overflow-x: auto;
+  background: #f1f5f9;
+  padding: 12px;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+#counter, #presentationCounter {
+  font-weight: bold;
+}
+
+#status {
+  padding: 0 20px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.presentation {
+  padding: 24px;
+}
+
+.presentation .slide {
+  min-height: 75vh;
+  padding: 6vw;
+  font-size: 1.2rem;
+}
+
+body:has(.presentation:not(.hidden)) #editorLayout,
+body:has(.presentation:not(.hidden)) .topbar {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+    padding: 10px;
+  }
+
+  .topbar {
+    padding: 12px;
+  }
+
+  .topbar h1 {
+    width: 100%;
+  }
+
+  .slide {
+    padding: 20px;
+  }
+}
